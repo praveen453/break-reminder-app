@@ -1,9 +1,9 @@
+# React Frontend Dockerfile
 FROM node:20
 WORKDIR /app
-COPY package.json ./
-COPY package-lock.json ./
+COPY package.json package-lock.json ./
 RUN npm install
-COPY . ./
+COPY . .
 RUN npm run build
-CMD ["npm", "start"]
-EXPOSE 5000
+CMD ["npx", "serve", "-s", "build", "-l", "3000"]
+EXPOSE 3000
