@@ -20,7 +20,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 20
           cache: 'npm'
 
       - name: Install Dependencies
@@ -35,9 +35,10 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
         with:
-          publish-dir: "./build"
-          production-branch: "main"
-          deploy-message: "Auto-deploy from GitHub Actions"
+          publish-dir: ./build
+          production-branch: main
+          deploy-message: "Deploying from GitHub Actions"
           github-token: ${{ secrets.GITHUB_TOKEN }}
           netlify-auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           netlify-site-id: ${{ secrets.NETLIFY_SITE_ID }}
+      
