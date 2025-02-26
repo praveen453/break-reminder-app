@@ -39,6 +39,6 @@ jobs:
           production-branch: main
           deploy-message: "Deploying from GitHub Actions"
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          netlify-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          auth-token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           site-id: ${{ secrets.NETLIFY_SITE_ID }}
       
