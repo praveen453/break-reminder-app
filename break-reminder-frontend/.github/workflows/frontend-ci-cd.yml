@@ -34,11 +34,10 @@ jobs:
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}  # ✅ Set as environment variable
         with:
           publish-dir: ./build
           production-branch: main
           deploy-message: "Deploying from GitHub Actions"
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          netlify_auth_token: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          netlify_site_id: ${{ secrets.NETLIFY_SITE_ID }}
-      
