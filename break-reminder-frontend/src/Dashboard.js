@@ -6,7 +6,7 @@ function Dashboard() {
   const [reminders, setReminders] = useState([]);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
-  const API_BASE_URL = "http://break-reminder-app-production.up.railway.app/api/reminders";
+  const API_BASE_URL = `${process.env.REACT_APP_BACKEND_URL}/api/reminders`;
   const token = localStorage.getItem("token");
 
   // ✅ Convert 24-hour time to 12-hour format
