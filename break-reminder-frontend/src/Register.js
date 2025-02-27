@@ -20,7 +20,7 @@ function Register() {
     }
 
     try {
-      const response = await axios.post("http://localhost:5050/api/auth/register", {
+      const response = await axios.post("http://break-reminder-app-production.up.railway.app/api/auth/register", {
         name,
         email,
         password,

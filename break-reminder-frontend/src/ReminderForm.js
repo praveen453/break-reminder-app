@@ -13,7 +13,7 @@ function ReminderForm({ setReminders }) {
     }
 
     try {
-      const response = await fetch("http://localhost:5050/api/reminders", {
+      const response = await fetch("http://break-reminder-app-production.up.railway.app/api/reminders", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

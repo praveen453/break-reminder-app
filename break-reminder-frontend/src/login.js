@@ -17,7 +17,7 @@ function Login() {
     setError("");
 
     try {
-      const response = await axios.post("http://localhost:5050/api/auth/login", {
+      const response = await axios.post("http://break-reminder-app-production.up.railway.app/api/auth/login", {
         email,
         password,
       });
