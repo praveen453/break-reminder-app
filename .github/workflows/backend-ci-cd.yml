@@ -1,0 +1,39 @@
+name: Backend CI/CD
+
+on:
+  push:
+    branches:
+      - main
+      - praveen
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Tests
+        run: npm test
+
+      - name: Deploy to Railway
+        run: |
+          set -e
+          curl -fsSL cli.new | sh
+          railway up --service=break-reminder-app
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          DEBUG: 'railway:*'
+    
