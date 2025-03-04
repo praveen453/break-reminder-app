@@ -1,4 +1,4 @@
-name: Deploy Backend to Railway
+name: Backend CI/CD
 
 on:
   push:
