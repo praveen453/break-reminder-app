@@ -1,4 +1,4 @@
-name: Deploy Backend to Railway
+name: Backend CI/CD
 
 on:
   push:
@@ -30,6 +30,7 @@ jobs:
 
       - name: Deploy to Railway
         run: |
+          set -e
           curl -fsSL cli.new | sh
           railway up --service=break-reminder-backend
         env:
