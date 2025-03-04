@@ -36,4 +36,5 @@ jobs:
           railway up --service=break-reminder-backend
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          DEBUG: 'railway:*'
     
