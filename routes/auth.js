@@ -10,12 +10,12 @@ router.post("/register", async (req, res) => {
     try {
       const { name, email, password } = req.body;
   
-      // ✅ Validate input
+ 
       if (!name || !email || !password) {
         return res.status(400).json({ msg: "All fields are required!" });
       }
   
-      // ✅ Check if user already exists
+ 
       let user = await User.findOne({ email });
       if (user) {
         console.log(`⚠️ User already exists: ${email}`);
