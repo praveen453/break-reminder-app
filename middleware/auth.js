@@ -5,21 +5,21 @@ const User = require('../models/User');
 module.exports = async (req, res, next) => {
     try {
         const token = req.header('Authorization')?.replace('Bearer ', '');
-        console.log("🔍 Token Received:", token);
+        console.log(" Token Received:", token);
 
         if (!token) {
             return res.status(401).json({ message: "No token provided" });
         }
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        console.log("🔍 Decoded Token:", decoded);
+        console.log(" Decoded Token:", decoded);
 
         if (!mongoose.Types.ObjectId.isValid(decoded.id)) {
             return res.status(400).json({ message: "Invalid User ID format" });
         }
 
         const user = await User.findById(decoded.id);
-        console.log("🔍 User Found:", user);
+        console.log(" User Found:", user);
 
         if (!user) {
             return res.status(404).json({ message: "User not found" });
@@ -28,22 +28,8 @@ module.exports = async (req, res, next) => {
         req.user = user;
         next();
     } catch (error) {
-        console.error("❌ Authentication Error:", error);
+        console.error(" Authentication Error:", error);
         res.status(401).json({ message: "Unauthorized" });
     }
 };
 
-
-
-//module.exports = function (req, res, next) {
-    //const token = req.header('x-auth-token');
-   // if (!token) return res.status(401).json({ msg: 'No token, authorization denied' });
-
- //   try {
-  //      const decoded = jwt.verify(token, process.env.JWT_SECRET);
-  //      req.user = decoded;
- //       next();
- //   } catch (error) {
- //       res.status(401).json({ msg: 'Token is not valid' });
-///    }
-//}; 
