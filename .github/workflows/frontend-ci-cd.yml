@@ -29,7 +29,9 @@ jobs:
         run: npm test
 
       - name: Build for Production
-        run: npm run build
+        run: |
+          cd break-reminder-frontend
+          npm run build
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
