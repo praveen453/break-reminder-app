@@ -32,8 +32,7 @@ jobs:
         run: |
           set -e
           curl -fsSL cli.new | sh
-          railway init --project=break-reminder-app
-          railway up --service=break-reminder-backend
+          railway up --service=break-reminder-app
         env:
           RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
           DEBUG: 'railway:*'
