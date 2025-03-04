@@ -25,15 +25,13 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      - name: Fix Jest Permissions
-        run: chmod +x node_modules/.bin/jest
-
-
       - name: Run Tests
         run: npm test
 
       - name: Build for Production
-        run: npm run build
+        run: |
+          cd break-reminder-frontend
+          npm run build
 
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
