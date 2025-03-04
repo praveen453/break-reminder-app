@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "npx jest",
     "dev": "node index.js",
     "start": "node server.js"
   },
