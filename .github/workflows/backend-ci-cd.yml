@@ -30,6 +30,7 @@ jobs:
 
       - name: Deploy to Railway
         run: |
+          set -e
           curl -fsSL cli.new | sh
           railway up --service=break-reminder-backend
         env:
