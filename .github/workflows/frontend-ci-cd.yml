@@ -41,9 +41,9 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
         env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}  # ✅ Ensure secret is set
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}  
         with:
-          publish-dir: break-reminder-frontend/build  # ✅ Correct build path
+          publish-dir: break-reminder-frontend/build  
           production-branch: main
           deploy-message: "Deploying from GitHub Actions"
           github-token: ${{ secrets.GITHUB_TOKEN }}
