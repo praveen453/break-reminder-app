@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "npx jest",
+    "test": "jest --runInBand",
     "dev": "node index.js",
     "start": "node server.js"
   },
