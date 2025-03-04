@@ -35,5 +35,5 @@ jobs:
           railway init --project=break-reminder-app
           railway up --service=break-reminder-backend
         env:
-          RAILWAY_TOKEN: ${{ secrets.RAILWAY_API_TOKEN }}
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
     
