@@ -76,7 +76,7 @@ function ReminderForm({ setReminders }) {
   );
 }
 
-// ✅ Updated Styles for Better UI
+
 const styles = {
   container: {
     padding: "20px",
