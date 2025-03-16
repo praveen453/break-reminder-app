@@ -9,17 +9,17 @@ function Dashboard() {
   const API_BASE_URL = `${process.env.REACT_APP_BACKEND_URL}/api/reminders`;
   const token = localStorage.getItem("token");
 
-  // ✅ Convert 24-hour time to 12-hour format
+
   const convertTo12Hour = (time) => {
     if (!time) return "";
     const [hours, minutes] = time.split(":");
     let hour = parseInt(hours, 10);
     let amPm = hour >= 12 ? "PM" : "AM";
-    hour = hour % 12 || 12; // Convert 0 to 12 for midnight
+    hour = hour % 12 || 12; 
     return `${hour}:${minutes} ${amPm}`;
   };
 
-  // ✅ Fetch reminders from the backend (using useCallback)
+
   const fetchReminders = useCallback(async () => {
     try {
       const response = await fetch(API_BASE_URL, {
@@ -42,7 +42,7 @@ function Dashboard() {
     }
   }, [API_BASE_URL, token]);
 
-  // ✅ Redirect to login if no token & fetch reminders when mounted
+  
   useEffect(() => {
     if (!token) {
       navigate("/");

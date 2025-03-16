@@ -18,7 +18,7 @@ router.post("/register", async (req, res) => {
  
       let user = await User.findOne({ email });
       if (user) {
-        console.log(`⚠️ User already exists: ${email}`);
+        console.log(` User already exists: ${email}`);
         return res.status(400).json({ msg: "User already exists" });
       }
   
@@ -29,7 +29,7 @@ router.post("/register", async (req, res) => {
     
       user = new User({ name, email, password: hashedPassword });
       await user.save();
-      console.log(`✅ User Registered: ${user.email}`);
+      console.log(` User Registered: ${user.email}`);
   
   
       const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, {
@@ -39,7 +39,7 @@ router.post("/register", async (req, res) => {
      
       res.status(201).json({ token, user });
     } catch (error) {
-      console.error("❌ Registration Error:", error.message);
+      console.error(" Registration Error:", error.message);
       res.status(500).json({ msg: "Server Error", error: error.message });
     }
   });

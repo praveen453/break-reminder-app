@@ -27,7 +27,7 @@ function Register() {
       });
 
       console.log("Registration successful", response.data);
-      navigate("/"); // ✅ Redirect to Login after registration
+      navigate("/"); 
     } catch (err) {
       setError("Registration failed. Please try again.");
     }

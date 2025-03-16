@@ -1,4 +1,4 @@
-# React Frontend Dockerfile
+
 FROM node:20
 WORKDIR /app
 COPY package.json package-lock.json ./

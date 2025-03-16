@@ -32,7 +32,7 @@ jobs:
 
       - name: Run Tests
         working-directory: break-reminder-frontend
-        run: npm test || echo "Tests failed, continuing deployment..."  # ✅ Avoid breaking deployment if tests fail
+        run: npm test || echo "Tests failed, continuing deployment..."  
 
       - name: Build for Production
         working-directory: break-reminder-frontend

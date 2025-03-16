@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/User');
-const authMiddleware = require('../middleware/auth'); // ✅ Protect routes with JWT authentication
+const authMiddleware = require('../middleware/auth'); 
 
-// ✅ Get all reminders for the logged-in user
+
 router.get('/', authMiddleware, async (req, res) => {
     try {
         const user = await User.findById(req.user.id).select('reminders');
@@ -16,7 +16,7 @@ router.get('/', authMiddleware, async (req, res) => {
     }
 });
 
-// ✅ Create a new reminder for the logged-in user
+
 router.post('/', authMiddleware, async (req, res) => {
     const { time, message } = req.body;
 
