@@ -7,7 +7,7 @@ import { Container, AppBar, Toolbar, Typography, Button } from "@mui/material";
 
 function App() {
   return (
-    <Router>  {/* ✅ Wrap everything inside BrowserRouter */}
+    <Router>  {/*  Wrap everything inside BrowserRouter */}
       <AppBar position="static" sx={{ bgcolor: "#1976d2" }}>
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>

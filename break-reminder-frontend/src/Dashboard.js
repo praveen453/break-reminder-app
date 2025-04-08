@@ -75,10 +75,10 @@ function Dashboard() {
         </button>
       </div>
 
-      {/* ✅ Reminder Form */}
+      {/*  Reminder Form */}
       <ReminderForm setReminders={fetchReminders} />
 
-      {/* ✅ Display Reminders */}
+      {/*  Display Reminders */}
       <h3 style={{ color: "#333" }}>Your Reminders:</h3>
       {error && <p style={{ color: "red", fontWeight: "bold" }}>{error}</p>}
 

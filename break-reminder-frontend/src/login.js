@@ -22,10 +22,10 @@ function Login() {
         password,
       });
 
-      // ✅ Save token in localStorage securely
+  
       localStorage.setItem("token", response.data.token);
 
-      // ✅ Redirect to Dashboard
+      
       navigate("/dashboard");
     } catch (err) {
       setError("Login failed. Please check your credentials.");
